@@ -1,8 +1,10 @@
 """
-Punto de entrada principal que ejecuta de forma secuencial más de 10
-operaciones completas (registros válidos e inválidos de clientes, creación correcta
-e incorrecta de servicios, y reservas exitosas y fallidas), evidenciando que la
-aplicación continúa operando sin interrupciones.
+Punto de entrada principal que ejecuta de forma secuencial 20 operaciones
+completas (registros válidos e inválidos de clientes, creación correcta e
+incorrecta de servicios, reservas exitosas y fallidas, cancelaciones por objeto
+y por ID, búsquedas por ID, cambio de disponibilidad de servicios y listado de
+reservas por estado), evidenciando que la aplicación continúa operando sin
+interrupciones.
 """
 
 from gestor import GestorSoftwareFJ
@@ -111,6 +113,39 @@ def ejecutar_simulacion() -> None:
     gestor.cancelar_reserva(reserva_2)
     # Segundo intento sobre la misma reserva para demostrar control de OperacionNoPermitidaError
     gestor.cancelar_reserva(reserva_2)
+
+    # -------------------------------------------------------------------------
+    # BLOQUE 4: BÚSQUEDAS, CANCELACIÓN POR ID, DISPONIBILIDAD Y LISTADOS
+    # -------------------------------------------------------------------------
+    print("\n--- 17. Operación: Búsqueda de reservas por ID (R001 existente y R999 inexistente) ---")
+    # Búsqueda exitosa de una reserva registrada en memoria
+    gestor.buscar_reserva("R001")
+    # Búsqueda fallida controlada mediante RegistroNoEncontradoError
+    gestor.buscar_reserva("R999")
+
+    print("\n--- 18. Operación: Cancelación por ID (sobrecarga: R003 válida y R404 inexistente) ---")
+    # Cancelación exitosa enviando solo el ID de la reserva
+    gestor.cancelar_reserva("R003")
+    # Cancelación fallida controlada porque el ID no existe en memoria
+    gestor.cancelar_reserva("R404")
+
+    print("\n--- 19. Operación: Cambio de disponibilidad (S004 habilitado, nueva reserva y S999 inexistente) ---")
+    # Habilita la sala que antes estaba fuera de servicio
+    gestor.cambiar_disponibilidad_servicio("S004", True)
+    # La reserva sobre la sala habilitada ahora se confirma (en la operación 13 había fallado)
+    gestor.procesar_reserva("R007", cliente_2, sala_mantenimiento, duracion=3)
+    # Cambio fallido controlado porque el servicio no existe en el catálogo
+    gestor.cambiar_disponibilidad_servicio("S999", False)
+
+    print("\n--- 20. Operación: Listado de reservas por estado (CANCELADA válido y PERDIDA inválido) ---")
+    # Obtiene únicamente las reservas canceladas
+    reservas_canceladas = gestor.listar_reservas(estado="CANCELADA")
+    # Recorre el resultado para mostrar el detalle de cada reserva cancelada
+    for reserva in reservas_canceladas:
+        # Muestra el resumen de la reserva cancelada
+        print(f"    -> {reserva.obtener_resumen()}")
+    # Listado fallido controlado porque el estado solicitado no existe
+    gestor.listar_reservas(estado="PERDIDA")
 
     # Muestra el consolidado final demostrando que la aplicación sigue estable
     gestor.mostrar_resumen_general()
