@@ -60,3 +60,11 @@ class CalculoInconsistenteError(ErrorSistemaFJ):
     produce valores numéricos inconsistentes, negativos o errores aritméticos.
     """
     pass
+
+
+class RegistroNoEncontradoError(ErrorSistemaFJ):
+    """
+    Excepción lanzada cuando se busca un cliente, servicio o reserva por su
+    identificador (ID) y este no existe en las listas internas en memoria.
+    """
+    pass
