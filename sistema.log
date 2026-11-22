@@ -26,3 +26,52 @@
 2026-11-20 09:52:34 | [INFO] | Transacción de reserva [R006] concluida.
 2026-11-20 09:52:34 | [INFO] | Reserva [R002] cancelada correctamente.
 2026-11-20 09:52:34 | [ERROR] | Fallo al cancelar reserva: La reserva [R002] ya estaba cancelada previamente.
+2026-11-22 16:00:16 | [INFO] | Sistema GestorSoftwareFJ inicializado correctamente.
+2026-11-22 16:00:16 | [INFO] | Cliente registrado con éxito: Cliente [C001] Laura Sofía Gómez | Correo: laura.gomez@unad.edu.co | Tel: 3104567890
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de validación para solicitud de cliente ID='C001'.
+2026-11-22 16:00:16 | [INFO] | Cliente registrado con éxito: Cliente [C002] Carlos Andrés Ruiz | Correo: carlos.ruiz@empresa.co | Tel: 3209876543
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de validación para solicitud de cliente ID='C002'.
+2026-11-22 16:00:16 | [ERROR] | Error al registrar cliente [C003]: El correo electrónico 'pedro.perez.correo.invalido' no tiene un formato válido.
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de validación para solicitud de cliente ID='C003'.
+2026-11-22 16:00:16 | [ERROR] | Error al registrar cliente [C004]: El teléfono '123AB' debe contener al menos 7 dígitos numéricos.
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de validación para solicitud de cliente ID='C004'.
+2026-11-22 16:00:16 | [INFO] | Servicio registrado: [Sala: S001] Sala Magistral A | Capacidad: 30 pers. | Tarifa: $60,000/hora | Estado: Disponible
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de creación para solicitud de servicio ID='S001'.
+2026-11-22 16:00:16 | [INFO] | Servicio registrado: [Equipo: S002] Workstation Portátil IA (Gama Alta) | Tarifa: $95,000/día | Estado: Disponible
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de creación para solicitud de servicio ID='S002'.
+2026-11-22 16:00:16 | [INFO] | Servicio registrado: [Asesoría: S003] Consultoría Arquitectura Cloud (DevOps & AWS) | Tarifa: $150,000/sesión | Estado: Disponible
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de creación para solicitud de servicio ID='S003'.
+2026-11-22 16:00:16 | [INFO] | Servicio registrado: [Sala: S004] Sala Junta Directiva | Capacidad: 12 pers. | Tarifa: $80,000/hora | Estado: No Disponible
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de creación para solicitud de servicio ID='S004'.
+2026-11-22 16:00:16 | [ERROR] | Error al crear servicio [S005]: La tarifa base (-45000.0) debe ser un número mayor a cero.
+2026-11-22 16:00:16 | [INFO] | Finalizó proceso de creación para solicitud de servicio ID='S005'.
+2026-11-22 16:00:16 | [INFO] | Reserva confirmada exitosamente: Reserva [R001] | Estado: CONFIRMADA | Cliente: Laura Sofía Gómez | Servicio: Sala Magistral A | Duración: 4 u. | Total (IVA inc.): $315,350.00
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R001] concluida.
+2026-11-22 16:00:16 | [INFO] | Reserva confirmada exitosamente: Reserva [R002] | Estado: CONFIRMADA | Cliente: Carlos Andrés Ruiz | Servicio: Workstation Portátil IA | Duración: 5 u. | Total (IVA inc.): $504,485.62
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R002] concluida.
+2026-11-22 16:00:16 | [INFO] | Reserva confirmada exitosamente: Reserva [R003] | Estado: CONFIRMADA | Cliente: Laura Sofía Gómez | Servicio: Consultoría Arquitectura Cloud | Duración: 2 u. | Total (IVA inc.): $328,860.00
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R003] concluida.
+2026-11-22 16:00:16 | [ERROR] | Error en reserva [R004]: No es posible reservar 'Sala Junta Directiva' porque no está disponible actualmente.
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R004] concluida.
+2026-11-22 16:00:16 | [ERROR] | Error en reserva [R005]: Duración inválida (25 h) para 'Sala Magistral A'. Las salas se reservan de 1 a 12 horas.
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R005] concluida.
+2026-11-22 16:00:16 | [ERROR] | Error en reserva [R006]: Fallo en el cálculo de costos para el servicio 'Workstation Portátil IA'. | Causa raíz: El descuento (1.5) debe estar entre 0.0 y 0.99.
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R006] concluida.
+2026-11-22 16:00:16 | [INFO] | Reserva [R002] cancelada correctamente.
+2026-11-22 16:00:16 | [INFO] | Finalizó el intento de cancelación de la reserva [R002].
+2026-11-22 16:00:16 | [ERROR] | Fallo al cancelar reserva: La reserva [R002] ya estaba cancelada previamente.
+2026-11-22 16:00:16 | [INFO] | Finalizó el intento de cancelación de la reserva [R002].
+2026-11-22 16:00:16 | [INFO] | Reserva encontrada: Reserva [R001] | Estado: CONFIRMADA | Cliente: Laura Sofía Gómez | Servicio: Sala Magistral A | Duración: 4 u. | Total (IVA inc.): $315,350.00
+2026-11-22 16:00:16 | [ERROR] | Búsqueda de reserva [R999] fallida: No existe un registro de reserva con el ID 'R999' en memoria.
+2026-11-22 16:00:16 | [INFO] | Reserva [R003] cancelada correctamente.
+2026-11-22 16:00:16 | [INFO] | Finalizó el intento de cancelación de la reserva [R003].
+2026-11-22 16:00:16 | [ERROR] | Fallo al cancelar reserva: No existe un registro de reserva con el ID 'R404' en memoria.
+2026-11-22 16:00:16 | [INFO] | Finalizó el intento de cancelación de la reserva [R404].
+2026-11-22 16:00:16 | [INFO] | Disponibilidad actualizada: [Sala: S004] Sala Junta Directiva | Capacidad: 12 pers. | Tarifa: $80,000/hora | Estado: Disponible
+2026-11-22 16:00:16 | [INFO] | Finalizó solicitud de cambio de disponibilidad para servicio ID='S004'.
+2026-11-22 16:00:16 | [INFO] | Reserva confirmada exitosamente: Reserva [R007] | Estado: CONFIRMADA | Cliente: Carlos Andrés Ruiz | Servicio: Sala Junta Directiva | Duración: 3 u. | Total (IVA inc.): $285,600.00
+2026-11-22 16:00:16 | [INFO] | Transacción de reserva [R007] concluida.
+2026-11-22 16:00:16 | [ERROR] | Error al cambiar disponibilidad del servicio [S999]: No existe un registro de servicio con el ID 'S999' en memoria.
+2026-11-22 16:00:16 | [INFO] | Finalizó solicitud de cambio de disponibilidad para servicio ID='S999'.
+2026-11-22 16:00:16 | [INFO] | Listado de reservas (filtro: CANCELADA): 2 encontrada(s).
+2026-11-22 16:00:16 | [ERROR] | Error al listar reservas con estado [PERDIDA]: Estado de reserva inválido: 'PERDIDA'. Use PENDIENTE, CONFIRMADA o CANCELADA.
